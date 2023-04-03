@@ -1317,4 +1317,14 @@ hr {
   .company-information {
     margin-bottom: 160px;
   }
+
+  .show {
+    transform: translate(-212px, 0);
+  }
+  #burger-inner {
+      right: -424px;
+      width: 212px;
+      height: 100%;
+      padding: 10%;
+  }
 }
