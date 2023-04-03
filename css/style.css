@@ -1,0 +1,1320 @@
+@charset "UTF-8";
+
+body {
+  font-family: 'Shippori Mincho', serif;
+  color: #2d2d2d;
+}
+
+/* -----reset----- */
+body, h1, h2, h3, h4, h5, h6, p, address,
+ul, ol, li, dl, dt, dd, img, form, table, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  text-align: left;
+  list-style-type: none;
+  border-collapse: collapse;
+}
+
+textarea {
+  font-size: 100%;
+  vertical-align: middle;
+}
+
+img {
+  border-style: none;
+  /*display: block;*/
+}
+
+hr {
+  /*display: none;*/
+}
+
+em {
+  font-style: normal
+}
+
+input {
+  line-height: auto;
+  vertical-align: middle;
+}
+
+strong.more {
+  color: #c30
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+
+html {}
+
+/*body {
+  font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+}
+*/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*--------------共通--------------*/
+h1 {
+  color: #657580;
+}
+
+#wrapper {
+  width: 100%;
+}
+
+.about-msg, .item, .description-side, label, select, button {
+  font-size: 12px;
+}
+
+section {
+  margin-top: 150px;
+}
+
+header section {
+  margin-top: 0;
+}
+
+.main-visual, main {
+  padding-top: 94px;
+}
+
+a:hover {
+  opacity: 0.6;
+  transition: all 0.3s;
+}
+
+/*-----animation-----*/
+.fadeInUpTrigger {
+  opacity: 0;
+}
+
+.fadeIn {
+  animation-name: fadeInAnime;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInAnime {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeUpTrigger {
+  opacity: 0;
+}
+
+.fadeUp {
+  animation-name: fadeUpAnime;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    ;
+  }
+}
+
+/*----------header----------*/
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 999;
+  height: 94px;
+}
+
+.nav.material-icons {
+  color: #555;
+  content: "\e8b6";
+}
+
+.logo {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.logo img {
+  height: 55px;
+  /*margin-top: 5px;*/
+}
+
+.logo h1 {
+  text-align: center;
+  margin-top: -10px;
+  letter-spacing: 0.1em;
+}
+
+.logo a {
+  display: inline-block;
+}
+
+.header-nav {
+  display: table;
+}
+
+.header-nav img {
+  width: 15px;
+  margin: auto 35px;
+}
+
+.burger-btn {
+  position: relative;
+  height: 18px;
+  width: 25px;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-right: 35px;
+}
+
+.burger-btn span {
+  position: absolute;
+  right: 0;
+  height: 1px;
+  width: 17px;
+  background-color: #333;
+  border-radius: 2px;
+  display: inline-block;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+.burger-btn:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.burger-btn span:nth-of-type(1) {
+  bottom: 15px;
+}
+
+.burger-btn span:nth-of-type(2) {
+  bottom: 7.5px;
+}
+
+.burger-btn span:nth-of-type(3) {
+  bottom: 0;
+}
+
+.burger-btn:hover span:nth-of-type(2) {
+  width: 50%;
+}
+
+.burger-btn:hover span:nth-of-type(3) {
+  width: 20%;
+}
+
+#burger-inner {
+  position: fixed;
+  right: -540px;
+  top: 0;
+  width: 270px;
+  height: 100%;
+  padding: 3%;
+}
+
+#burger-inner li {
+  font-size: 12px;
+  padding: 15px 0;
+}
+
+#burger-inner li:hover {
+  opacity: 0.6;
+  transition: all 0.3s;
+}
+
+/*-----jq-----*/
+.show {
+  transform: translate(-270px, 0);
+}
+
+/*------------*/
+#wrapper, #burger-inner {
+  transition: transform 0.5s;
+}
+
+/*#mask {
+??????????
+}
+*/
+.main-visual {
+  display: block;
+  padding-left: 10%;
+  position: relative;
+}
+
+.main-title {
+  display: block;
+  position: absolute;
+  bottom: 50%;
+  z-index: 900;
+}
+
+.main-title h2 {
+  font-size: 32px;
+  margin-bottom: 1rem;
+}
+
+.main-title p {
+  font-size: 12px;
+  letter-spacing: 1.2px;
+}
+
+.mainbg-img {
+  width: 90%;
+  height: calc(60vw);
+  background-image: url(../img/home/main-img.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  margin: 0 0 0 auto;
+}
+
+main {
+  padding: 0 10%;
+}
+
+main p {
+  letter-spacing: 0.1em;
+}
+
+h3 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+  letter-spacing: 0.5rem;
+}
+
+.sub-title {
+  font-size: 12px;
+  margin-bottom: 5%;
+  color: #999;
+  letter-spacing: 0.1em;
+}
+
+/*----------about----------*/
+.about {
+  display: flex;
+}
+
+.about .msg {
+  width: 50%;
+}
+
+.about-msg {
+  margin-bottom: 10%;
+  margin-right: 10%;
+}
+
+.more {
+  padding: 15px 30px;
+  border: solid 1px #2d2d2d;
+  text-align: center;
+  width: 60%;
+  font-size: 12px;
+}
+
+.more:hover {
+  background-color: #333;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.about a:hover {
+  opacity: 1.0;
+  transition: all 0.3s;
+}
+
+.about-img {
+  width: 50%;
+  position: relative;
+  background: aliceblue;
+  height: 0;
+  padding-top: 45%;
+}
+
+.about-bgimg {
+  background-image: url(../img/home/about-img.jpg);
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*----------item----------*/
+.item-container {
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.item {
+  margin-bottom: 2%;
+}
+
+.item-img {
+  width: 100%;
+  overflow: hidden;
+}
+
+.item-img img {
+  width: 100%;
+}
+
+.item-img img:hover {
+  transform: scale(1.1);
+  transition: all 0.6s;
+}
+
+.item-title {
+  margin-bottom: 10px;
+}
+
+.item-price {
+  color: #999;
+  font-size: 11px;
+  margin-bottom: 15px;
+  letter-spacing: 0.1rem;
+}
+
+.item-notes {
+  color: red;
+  font-size: 10px;
+}
+
+.products .more, .news .more {
+  width: 40%;
+  margin: 60px auto 0;
+}
+
+.products .item a:hover {
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
+.linkmore:hover {
+  opacity: 1.0;
+  transition: all 0.3s;
+}
+
+/*----------news----------*/
+.news {
+  margin-bottom: 10%;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+
+.news table {
+  border-collapse: separate;
+  border-spacing: 20px 30px;
+}
+
+.news th {
+  padding-right: 20px;
+  border-right: 1px solid lightgray;
+  text-align: center;
+}
+
+/*----------to-top----------*/
+.to-top {
+  text-align: center;
+  margin-bottom: 10%;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.to-top a {
+  margin-top: 10px;
+}
+
+.to-topinner {
+  width: 30px;
+  margin: 0 auto;
+  text-align: center;
+  cursor: pointer;
+}
+
+.to-topinner span {
+  width: 1px;
+  height: 60px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.to-topinner span::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2d2d2d;
+}
+
+/*----------footer----------*/
+footer {
+  padding: 0 5% 3%;
+}
+
+.footer-logo img {
+  height: 40px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftside {
+  display: flex;
+}
+
+.footer-logo a {
+  display: flex;
+}
+
+footer h1 {
+  font-size: 25px;
+  margin-right: 50px;
+  padding-top: 20px:
+}
+
+.document {
+  display: flex;
+  align-items: center;
+}
+
+.privacy {
+  padding-right: 30px;
+}
+
+.rightside {
+  display: table;
+}
+
+.icon {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.icon .facebook {
+  margin-bottom: 2px;
+}
+
+.icon .instagram {
+  margin-left: 25px;
+}
+
+footer p {
+  font-size: 12px;
+}
+
+.copyright p {
+  position: relative;
+  bottom: 10px;
+  text-align: right;
+  color: #999;
+  letter-spacing: 0.1rem;
+}
+
+/*----------items.php-----------*/
+.description-side .supplement {
+  font-size: 10px;
+  color: #999;
+}
+
+.details-slideshow {
+  padding-top: 94px;
+  width: 100%;
+}
+
+.slideshow-slides {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.slide {
+  margin: 0 1px;
+}
+
+.details-slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*
+.slick-arrow {
+??????????
+}
+*/
+.details-container {
+  display: flex;
+}
+
+.cart-side {
+  width: 35%;
+  padding-left: 50px;
+  padding-top: 50px;
+  margin-top: 0
+}
+
+.cart-side select {
+  margin-bottom: 15px;
+  margin-left: 2px;
+  border: solid 1px #999;
+  border-radius: 4px;
+  color: #555;
+  background-color: #fff;
+}
+
+.type {
+  padding: 2px;
+}
+
+.volume {
+  padding: 2px 50px 2px 2px;
+}
+
+.cart-side button {
+  padding: 15px 0px;
+  width: 80%;
+  background-color: #fff;
+  border: solid 1px #2d2d2d;
+  margin-top: 15px;
+  font-family: 'Shippori Mincho', serif;
+  color: #2d2d2d;
+}
+
+.cart-side button:hover {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+h4 {
+  margin-bottom: 1rem;
+  letter-spacing: 0.1rem;
+}
+
+.description-side {
+  width: 65%;
+  padding: 50px;
+  margin-top: 0;
+}
+
+.supplement {
+  margin-bottom: 40px;
+}
+
+/*----------about.php----------*/
+.ap-mainbgimg {
+  background-image: url(../img/about/ap-mainbgimg.jpg);
+  width: 100%;
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.ap-main {
+  padding: 0 0;
+}
+
+.ap-about {
+  margin-top: 0;
+}
+
+.ap-aboutinner {
+  background-color: #fff;
+  margin-top: -90px;
+  padding: 70px 10% 0;
+  width: 85%;
+  margin: -70px auto;
+}
+
+.ap-main-title h2 {
+  font-size: 32px;
+  margin-bottom: 1rem;
+}
+
+.ap-main-title p {
+  color: #999;
+  font-size: 12px;
+}
+
+.ap-aboutinner .about-msg {
+  padding-top: 5%;
+  line-height: 1.5rem;
+  font-size: 14px;
+}
+
+.story-container {
+  width: 100vw;
+  max-width: 1550px;
+  margin: 90px auto 0;
+  padding-top: 90px;
+}
+
+.story-title {
+  padding-left: 5%;
+}
+
+.story-container .flex, .jobtype {
+  display: flex;
+  align-items: center;
+}
+
+.story-container .reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.story-msg {
+  width: 45%;
+  padding: 0 5%;
+}
+
+h5 {
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
+  line-height: 3rem;
+}
+
+.story-msg p {
+  line-height: 1.7rem;
+  font-size: 14px;
+  letter-spacing: 0.2rem;
+  text-align: justify;
+}
+
+.jobtype h5 {
+  text-align: center;
+}
+
+.story-img {
+  width: 55%;
+  height: 525px;
+  max-height: 100vw;
+  background-size: cover;
+  background-position: center;
+}
+
+.orderthis {
+  text-align: right !important;
+  margin-top: 30px;
+}
+
+.ourjob-img {
+  width: 90%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+
+.ourjob-container {
+  margin: 9% auto 0;
+  max-width: 1400px;
+  width: 90%;
+}
+
+.ourjob {
+  text-align: center;
+}
+
+.jobtype {
+  margin-top: 100px;
+}
+
+.jobtype .story-msg {
+  padding-left: 0;
+}
+
+.member-container {
+  margin-top: 10%;
+}
+
+.member {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.member-title {
+  margin-left: 7%;
+}
+
+.member-introduction {
+  width: 100%;
+  max-width: 400px;
+  height: 950px;
+  margin: 0 auto;
+}
+
+.member-name .name, .type {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.member-name .type {
+  font-size: 12px;
+}
+
+.member-bgimg {
+  background-image: url(../img/about/member01.jpg);
+  width: 100%;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.career p {
+  margin-top: 10%;
+  line-height: 1.7rem;
+  text-align: justify;
+  font-size: 14px;
+}
+
+hr {
+  height: 1px;
+  width: 50%;
+}
+
+.company-information {
+  margin-top: 120px;
+}
+
+.company-information table {
+  margin: 0 auto;
+  height: 500px;
+  width: 615px;
+  letter-spacing: 0.1rem;
+}
+
+.company-information tr {
+  margin-top: 5%;
+  vertical-align: top;
+}
+
+.company-information td {
+  padding-left: 10%;
+}
+
+.company-information tr:nth-of-type(7) {
+  height: 70px;
+}
+
+/*----------responsive----------*/
+/*-----tablet-----*/
+@media screen and (max-width:768px) {
+
+  /*--共通--*/
+  section {
+    margin-top: 80px;
+  }
+
+  main {
+    padding: 0 5%;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+  }
+
+  /*--------*/
+  .main-header {
+    height: 76px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .logo h1 {
+    font-size: 13px;
+    letter-spacing: 0.05rem;
+    margin-top: -8px;
+  }
+
+  .header-nav img {
+    margin: auto 15px;
+  }
+
+  .burger-btn {
+    margin-right: 20px;
+  }
+
+  .main-visual {
+    padding-left: 0;
+    padding-top: 76px;
+  }
+
+  .main-title h2 {
+    font-size: 20px;
+  }
+
+  .main-title {
+    padding-left: 5%;
+  }
+
+  .mainbg-img {
+    width: 100%;
+  }
+
+  .about {
+    flex-direction: column-reverse;
+  }
+
+  .about-img {
+    width: 100%;
+  }
+
+  .about .msg {
+    width: 100%;
+  }
+
+  .about h3 {
+    padding-top: 20px;
+  }
+
+  .about-msg {
+    margin-bottom: 8%;
+    margin-right: 0;
+    line-height: 1.5rem;
+  }
+
+  .more {
+    width: 100%;
+    font-size: 10px;
+    letter-spacing: 0.1rem;
+  }
+
+  .item-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .products .more, .news .more {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .news {
+    font-size: 12px;
+    margin-bottom: 5%;
+  }
+
+  .news table {
+    width: 65%;
+  }
+
+  .to-top {
+    margin-top: 60px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+  }
+
+  footer h1 {
+    margin-right: 0;
+    font-size: 35px;
+    letter-spacing: 0.1rem;
+  }
+
+  .footer-logo {
+    display: inline-block;
+    margin: 0 auto;
+  }
+
+  .footer-logo a {
+    align-items: center;
+  }
+
+  .leftside {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .document {
+    margin: 0 auto;
+    font-size: 12px;
+    margin-top: 8px;
+    letter-spacing: 0.1rem;
+  }
+
+  .rightside {
+    margin: 30px auto;
+  }
+
+  .copyright p {
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 10px;
+  }
+
+  /*---items.php---*/
+  .details-slideshow {
+    padding-top: 76px;
+  }
+
+  .details-container {
+    display: block;
+  }
+
+  .cart-side {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .cart-side button {
+    width: 100%;
+  }
+
+  .description-side {
+    width: 100%;
+    padding: 45px 0;
+  }
+
+  /*---about.php---*/
+  .ap-main-title h2 {
+    font-size: 24px;
+  }
+
+  .ap-aboutinner .about-msg {
+    font-size: 12px;
+  }
+
+  .story-container .reverse {
+    display: block;
+  }
+
+  .responsive {
+    margin-top: 0;
+  }
+
+  .story-img {
+    margin: 0 0 0 auto;
+    width: 70%;
+    height: 280px;
+    background-size: cover;
+    position: relative;
+  }
+
+  .story-msg {
+    width: 100%;
+    padding: 6% 15% 0 5%;
+  }
+
+  .story-content .story-msg h5 {
+    position: absolute;
+    top: -30px;
+    background-color: #fff;
+    padding: 5px 20px 0 0;
+    font-size: 24px;
+  }
+
+  .story-msg p {
+    line-height: 1.3rem;
+    font-size: 12px;
+    letter-spacing: 0.1rem;
+  }
+
+  .story-container .flex, .jobtype {
+    display: block;
+  }
+
+  .flex .story-img {
+    margin-left: 0;
+    width: 70%;
+    height: 280px;
+    background-size: cover;
+    position: relative;
+  }
+
+  .flex h5 {
+    right: 20px;
+    padding-left: 20px;
+  }
+
+  .flex .story-msg {
+    width: 100%;
+    padding: 6% 5% 0 15%;
+  }
+
+  .paddingadd h5 {
+    text-align: right;
+  }
+
+  .paddingadd .story-msg {
+    padding: 12% 5% 0 15%;
+  }
+
+  .orderthis {
+    margin-top: 10px;
+  }
+
+  .ourjob {
+    font-size: 14px;
+  }
+
+  .jobtype h5 {
+    text-align: center;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .jobtype .story-msg {
+    padding: 0;
+  }
+
+  .ourjob-container {
+    margin: 20% auto 0;
+    width: 75%;
+  }
+
+  .ourjob-img {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .jobtype p {
+    padding: 7% 0;
+  }
+
+  .member-introduction {
+    max-width: 300px;
+    height: 730px;
+    margin: 0 auto;
+  }
+
+  .member-bgimg {
+    height: 280px;
+  }
+
+  .career p {
+    font-size: 12px;
+  }
+
+  .company-information {
+    margin-bottom: 180px;
+  }
+
+  .company-information table {
+    margin: 0 auto;
+    height: 450px;
+    width: 470px;
+    font-size: 12px;
+  }
+}
+
+/*-----mobile-----*/
+@media screen and (max-width:480px) {
+  .logo {
+    margin-left: 20px;
+  }
+
+  .main-visual {
+    height: 500px;
+  }
+
+  .main-title {
+    bottom: 55%;
+  }
+
+  .mainbg-img {
+    height: 100%;
+    background-position: 70%;
+  }
+  .item-container {
+    grid-gap: 20px;
+}
+
+  .news table {
+    width: 75%;
+  }
+
+  /*---about.php---*/
+  .ap-mainbgimg {
+    height: 60vh;
+  }
+
+  .ap-aboutinner {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 0;
+    margin: -100px auto 20px auto;
+  }
+
+  .ap-aboutinner .about-msg {
+    margin-top: 60px;
+    padding-top: 0;
+  }
+
+  .ap-main-title h2 {
+    font-size: 20px;
+    margin-top: 80px;
+  }
+
+  .story-container {
+    margin: 50px auto 0;
+  }
+
+  .story-content {
+    margin-top: 60px;
+  }
+
+  .story-img {
+    width: 85%;
+    height: 230px;
+    background-position: center;
+  }
+
+  .flex .story-img {
+    width: 85%;
+    height: 230px;
+    background-position: center;
+  }
+
+  .flex h5 {
+    padding-right: 0;
+  }
+
+  .story-msg {
+    padding: 15% 15% 0 5%;
+  }
+
+  .story-msg p {
+    line-height: 1.5rem;
+  }
+
+  .flex .story-msg {
+    padding: 15% 5% 0 15%;
+  }
+
+  .flex .story-msg h5 {
+    padding-right: 0;
+  }
+
+  .responsive {
+    margin-top: 40px;
+  }
+
+  .ourjob-container {
+    width: 85%;
+    margin: 50% auto 0;
+  }
+
+  .ourjob {
+    font-size: 14px;
+    letter-spacing: normal;
+  }
+
+  .ourjob-img {
+    height: 160px;
+  }
+
+  .jobtype {
+    margin-top: 70px;
+  }
+
+  .jobtype h5 {
+    margin-bottom: 0;
+  }
+
+  .jobtype p {
+    padding: 10% 0;
+  }
+
+  .member-container {
+    margin-top: 50%;
+  }
+
+  .member-title {
+    margin-bottom: 20%;
+  }
+
+  .member {
+    width: 90%;
+  }
+
+  .member-name .name {
+    margin-top: 10%;
+  }
+
+  .member-introduction {
+    height: 760px;
+  }
+
+  .company-information {
+    margin-top: 80px;
+  }
+
+  .company-information table {
+    width: 290px;
+  }
+
+  .company-information th {
+    width: 40%;
+  }
+
+  .company-information td {
+    padding-left: 0;
+  }
+
+  .company-information tr:nth-of-type(2) {
+    height: 60px;
+  }
+
+  .company-information tr:nth-of-type(7) {
+    height: 95px;
+  }
+
+  .company-information {
+    margin-bottom: 160px;
+  }
+}
